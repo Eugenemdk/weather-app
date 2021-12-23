@@ -18,7 +18,7 @@ message_s.textContent="Loading..."
 message_t.textContent="Loading..."
 message_frth.textContent="Loading..."
 message_ffth.textContent="Loading..."
-    fetch("http://localhost:5000/weather?address="+encodeURIComponent(placeValue)).then((response)=>{
+    fetch("/weather?address="+encodeURIComponent(placeValue)).then((response)=>{
         return response.json();
     }).then((data)=>{
         if(data.error){

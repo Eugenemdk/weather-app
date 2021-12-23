@@ -5,6 +5,7 @@ const res = require("express/lib/response")
 const request=require("postman-request")
 const geocode=require("./utils/geocode")
 const forecast=require("./utils/weatherforecast")
+const port=process.env.PORT || 5000
 const app=express()
 
 
@@ -90,7 +91,7 @@ app.get("*",(req,res)=>{
         name:"Eugene Medianyk"
     })
 })
-app.listen(5000,()=>{
-    console.log("Server started on port 5000")
+app.listen(port,()=>{
+    console.log("Server started on port "+port)
 })
 
