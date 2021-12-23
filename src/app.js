@@ -45,11 +45,6 @@ app.get('/about',(req,res)=>{
     })
 })
 app.get("/weather",(req,res)=>{
-    if(!req.query.address){
-        res.send({
-            error:"No address provided"
-        })
-    }else{
         const place=req.query.address
         geocode.geocode(place,(error,{longtitude,latitude,place_name}={})=>{
 if(error){
@@ -73,9 +68,7 @@ if(error){
             }
         })
         
-    }
-    
-})
+    })
 
 app.get("/help/*",(req,res)=>{
     res.render("err_article",{
