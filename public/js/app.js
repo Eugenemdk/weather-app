@@ -5,6 +5,7 @@ const message_s=document.querySelector("#second_message")
 const message_t=document.querySelector("#third_message")
 const message_frth=document.querySelector("#fourth_message")
 const message_ffth=document.querySelector("#fifth_message")
+const message_sxth=document.querySelector("#sixth_message")
 
 const weatherForm=document.querySelector("form")
 
@@ -18,6 +19,7 @@ message_s.textContent="Loading..."
 message_t.textContent="Loading..."
 message_frth.textContent="Loading..."
 message_ffth.textContent="Loading..."
+message_sxth.textContent="Loading..."
     fetch("/weather?address="+encodeURIComponent(placeValue)).then((response)=>{
         return response.json();
     }).then((data)=>{
@@ -29,6 +31,7 @@ return console.log("Error: "+error);
         message_t.textContent="Temperature feels like: "+data.feelsLike
         message_frth.textContent="Wind speed: "+data.windspeed
         message_ffth.textContent="Wind degree: "+data.windDegree
+        message_sxth.textContent="Description: "+data.weatherDescrtiption
         }
     })
     

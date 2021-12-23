@@ -12,6 +12,7 @@ const weatherforecast=(latitude,longtitude,callback)=>{
                 feelsLike:body.current.feelslike,
                 windspeed:body.current.wind_speed,
                 windDegree:body.current.wind_degree,
+                weatherDescription:body.current.weather_descriptions
             })
         }
     })
