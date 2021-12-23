@@ -45,29 +45,11 @@ app.get('/about',(req,res)=>{
     })
 })
 app.get("/weather",(req,res)=>{
-        const place=req.query.address
-        geocode.geocode(place,(error,{longtitude,latitude,place_name}={})=>{
-if(error){
-    return console.log("Error "+error)
-}
-            else if(!place){
-               return res.send({
-                error:"No place provided"
-                })
-            }
-            else{
-                forecast.weatherforecast(longtitude,latitude,(error,{temperature,feelsLike,windspeed,windDegree}={})=>{
-                    return res.send({
-                        place_name:place_name,
-                        temperature:temperature,
-                        feelsLike:feelsLike,
-                        windspeed:windspeed, 
-                        windDegree:windDegree,
-                    })
-                })
-            }
-        })
-        
+    res.render("index",{
+        title:"Weather app",
+        message:"Main page",
+        name:"Eugene Medianyk"
+    })
     })
 
 app.get("/help/*",(req,res)=>{
