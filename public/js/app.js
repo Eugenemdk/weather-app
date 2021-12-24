@@ -31,7 +31,7 @@ return console.log("Error: "+error);
         message_t.textContent="Temperature feels like: "+data.feelsLike
         message_frth.textContent="Wind speed: "+data.windspeed
         message_ffth.textContent="Wind degree: "+data.windDegree
-        message_sxth.textContent="Description: "+data.weatherDescription
+        message_sxth.textContent="Humidity: "+data.humidity
         }
     })
     

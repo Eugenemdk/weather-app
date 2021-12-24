@@ -7,12 +7,18 @@ const weatherforecast=(latitude,longtitude,callback)=>{
         }else if(body.success==="false"){
             callback("Access Restricted - Your current Subscription Plan does not support HTTPS Encryption.",undefined)
         }else{
-            callback(undefined,{
+            console.log(body.current.temperature)
+            console.log(body.current.feelslike)
+            console.log(body.current.wind_speed)
+            console.log(body.current.wind_degree)
+            console.log(body.current.humidity)
+            
+            callback(undefined,{ 
                 temperature:body.current.temperature,
                 feelsLike:body.current.feelslike,
                 windspeed:body.current.wind_speed,
                 windDegree:body.current.wind_degree,
-                weatherDescription:body.current.weather_descriptions
+                humidity:body.current.humidity
             })
         }
     })
